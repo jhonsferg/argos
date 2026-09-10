@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/go-chi/chi/v5 v5.3.2
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.1
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2
 	go.opentelemetry.io/otel v1.46.0
 	go.opentelemetry.io/otel/sdk v1.46.0
 )
