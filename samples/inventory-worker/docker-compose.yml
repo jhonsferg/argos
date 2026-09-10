@@ -1,0 +1,24 @@
+# Kafka is deliberately not defined here - this sample is the consumer half
+# of a pair with ../inventory-api, which must already be running (its own
+# docker-compose.yml owns the shared Kafka broker on :9092) before this one
+# has anything to consume. See README.md.
+services:
+  mongodb:
+    image: mongo:8
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+
+  cassandra:
+    image: cassandra:5
+    ports:
+      - "9042:9042"
+    healthcheck:
+      test: ["CMD-SHELL", "cqlsh -e 'describe cluster' || exit 1"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
