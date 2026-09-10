@@ -3,7 +3,7 @@ module github.com/jhonsferg/argos/examples/core-dummy
 go 1.26.0
 
 require (
-	github.com/jhonsferg/argos v0.1.0
+	github.com/jhonsferg/argos v0.1.1
 	go.opentelemetry.io/otel v1.46.0
 )
 
