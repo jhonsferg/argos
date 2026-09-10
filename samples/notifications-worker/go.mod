@@ -4,10 +4,10 @@ go 1.26.0
 
 require (
 	github.com/go-chi/chi/v5 v5.3.2
-	github.com/jhonsferg/argos v0.1.0
-	github.com/jhonsferg/argos/integrations/httpserver/chi v0.1.0
-	github.com/jhonsferg/argos/integrations/rabbitmq v0.1.0
-	github.com/jhonsferg/argos/integrations/smtp v0.1.0
+	github.com/jhonsferg/argos v0.1.1
+	github.com/jhonsferg/argos/integrations/httpserver/chi v0.1.2
+	github.com/jhonsferg/argos/integrations/rabbitmq v0.1.2
+	github.com/jhonsferg/argos/integrations/smtp v0.1.2
 	github.com/rabbitmq/amqp091-go v1.13.0
 )
 
@@ -18,8 +18,8 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.30.0 // indirect
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.0 // indirect
-	github.com/jhonsferg/argos/integrations/messaging/core v0.1.0 // indirect
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2 // indirect
+	github.com/jhonsferg/argos/integrations/messaging/core v0.1.2 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/rs/zerolog v1.35.1 // indirect
