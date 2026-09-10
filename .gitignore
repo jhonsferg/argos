@@ -1,0 +1,41 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/bin/
+/dist/
+
+# Test / coverage
+*.test
+*.out
+coverage.txt
+coverage.html
+
+# Go workspace/module caches (go.work.sum is committed, GOPATH cache is not)
+/vendor/
+
+# AI/coding tool config (never committed)
+.claude/
+
+# IDE / editor
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local env/config overrides
+.env
+*.local.yaml
+
+# Local dev/test infrastructure (kept on disk, never committed)
+/Makefile
+/docker/
+/samples/inventory-api/pg_hba_trust_all.conf
+
+# mkdocs build output
+/site/
