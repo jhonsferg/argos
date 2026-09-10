@@ -4,10 +4,10 @@ go 1.26.0
 
 require (
 	cloud.google.com/go/pubsub/v2 v2.6.0
-	github.com/jhonsferg/argos v0.1.0
-	github.com/jhonsferg/argos/integrations/gcppubsub v0.1.1
-	github.com/jhonsferg/argos/integrations/httpserver/echo v0.1.0
-	github.com/jhonsferg/argos/integrations/mongo v0.1.0
+	github.com/jhonsferg/argos v0.1.1
+	github.com/jhonsferg/argos/integrations/gcppubsub v0.1.3
+	github.com/jhonsferg/argos/integrations/httpserver/echo v0.1.2
+	github.com/jhonsferg/argos/integrations/mongo v0.1.2
 	github.com/labstack/echo/v4 v4.15.4
 	go.mongodb.org/mongo-driver/v2 v2.9.0
 	google.golang.org/api v0.297.0
@@ -30,8 +30,8 @@ require (
 	github.com/googleapis/enterprise-certificate-proxy v0.3.20 // indirect
 	github.com/googleapis/gax-go/v2 v2.24.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.30.0 // indirect
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.0 // indirect
-	github.com/jhonsferg/argos/integrations/messaging/core v0.1.0 // indirect
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2 // indirect
+	github.com/jhonsferg/argos/integrations/messaging/core v0.1.2 // indirect
 	github.com/klauspost/compress v1.19.2 // indirect
 	github.com/labstack/gommon v0.5.0 // indirect
 	github.com/mattn/go-colorable v0.1.15 // indirect
