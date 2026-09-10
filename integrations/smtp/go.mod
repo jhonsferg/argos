@@ -3,7 +3,7 @@ module github.com/jhonsferg/argos/integrations/smtp
 go 1.26.0
 
 require (
-	github.com/jhonsferg/argos v0.1.0
+	github.com/jhonsferg/argos v0.1.1
 	github.com/testcontainers/testcontainers-go/modules/mailpit v0.44.0
 	go.opentelemetry.io/otel v1.46.0
 	go.opentelemetry.io/otel/metric v1.46.0

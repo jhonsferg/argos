@@ -3,7 +3,7 @@ module github.com/jhonsferg/argos/cmd/doctor
 go 1.26.0
 
 require (
-	github.com/jhonsferg/argos v0.1.0
+	github.com/jhonsferg/argos v0.1.1
 	golang.org/x/tools v0.49.0
 )
 

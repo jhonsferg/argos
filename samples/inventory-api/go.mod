@@ -5,13 +5,13 @@ go 1.26.0
 require (
 	github.com/IBM/sarama v1.60.2
 	github.com/jackc/pgx/v5 v5.11.0
-	github.com/jhonsferg/argos v0.1.0
-	github.com/jhonsferg/argos/integrations/grpc v0.1.0
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.0
-	github.com/jhonsferg/argos/integrations/httpserver/nethttp v0.1.0
-	github.com/jhonsferg/argos/integrations/kafka v0.1.0
-	github.com/jhonsferg/argos/integrations/redis v0.1.0
-	github.com/jhonsferg/argos/integrations/sql v0.1.0
+	github.com/jhonsferg/argos v0.1.1
+	github.com/jhonsferg/argos/integrations/grpc v0.1.2
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2
+	github.com/jhonsferg/argos/integrations/httpserver/nethttp v0.1.2
+	github.com/jhonsferg/argos/integrations/kafka v0.1.2
+	github.com/jhonsferg/argos/integrations/redis v0.1.2
+	github.com/jhonsferg/argos/integrations/sql v0.1.2
 	github.com/redis/go-redis/v9 v9.22.0
 	go.opentelemetry.io/otel v1.46.0
 	google.golang.org/grpc v1.83.2
@@ -36,7 +36,7 @@ require (
 	github.com/jcmturner/gofork v1.7.6 // indirect
 	github.com/jcmturner/gokrb5/v8 v8.4.4 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
-	github.com/jhonsferg/argos/integrations/messaging/core v0.1.0 // indirect
+	github.com/jhonsferg/argos/integrations/messaging/core v0.1.2 // indirect
 	github.com/klauspost/compress v1.19.2 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect

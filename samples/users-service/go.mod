@@ -5,9 +5,9 @@ go 1.26.0
 require (
 	github.com/google/uuid v1.6.0
 	github.com/gorilla/mux v1.8.1
-	github.com/jhonsferg/argos v0.1.0
-	github.com/jhonsferg/argos/integrations/grpc v0.1.0
-	github.com/jhonsferg/argos/integrations/httpserver/gorillamux v0.1.0
+	github.com/jhonsferg/argos v0.1.1
+	github.com/jhonsferg/argos/integrations/grpc v0.1.2
+	github.com/jhonsferg/argos/integrations/httpserver/gorillamux v0.1.2
 	google.golang.org/grpc v1.83.2
 	google.golang.org/protobuf v1.36.12
 )
@@ -18,7 +18,7 @@ require (
 	github.com/go-logr/logr v1.4.4 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.30.0 // indirect
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.0 // indirect
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/rs/zerolog v1.35.1 // indirect

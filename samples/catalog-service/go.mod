@@ -6,11 +6,11 @@ require (
 	github.com/IBM/sarama v1.60.2
 	github.com/gin-gonic/gin v1.12.0
 	github.com/jackc/pgx/v5 v5.11.0
-	github.com/jhonsferg/argos v0.1.0
-	github.com/jhonsferg/argos/integrations/gorm v0.1.0
-	github.com/jhonsferg/argos/integrations/httpserver/gin v0.1.0
-	github.com/jhonsferg/argos/integrations/kafka v0.1.0
-	github.com/jhonsferg/argos/integrations/sql v0.1.0
+	github.com/jhonsferg/argos v0.1.1
+	github.com/jhonsferg/argos/integrations/gorm v0.1.2
+	github.com/jhonsferg/argos/integrations/httpserver/gin v0.1.2
+	github.com/jhonsferg/argos/integrations/kafka v0.1.2
+	github.com/jhonsferg/argos/integrations/sql v0.1.2
 	go.opentelemetry.io/otel v1.46.0
 	gorm.io/driver/postgres v1.6.2
 	gorm.io/gorm v1.31.2
@@ -45,8 +45,8 @@ require (
 	github.com/jcmturner/gofork v1.7.6 // indirect
 	github.com/jcmturner/gokrb5/v8 v8.4.4 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.0 // indirect
-	github.com/jhonsferg/argos/integrations/messaging/core v0.1.0 // indirect
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2 // indirect
+	github.com/jhonsferg/argos/integrations/messaging/core v0.1.2 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect

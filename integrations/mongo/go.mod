@@ -3,7 +3,7 @@ module github.com/jhonsferg/argos/integrations/mongo
 go 1.26.0
 
 require (
-	github.com/jhonsferg/argos v0.1.0
+	github.com/jhonsferg/argos v0.1.1
 	github.com/testcontainers/testcontainers-go/modules/mongodb v0.44.0
 	go.mongodb.org/mongo-driver/v2 v2.9.0
 	go.opentelemetry.io/otel v1.46.0

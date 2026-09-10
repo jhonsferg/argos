@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/gocql/gocql v1.7.0
-	github.com/jhonsferg/argos v0.1.0
+	github.com/jhonsferg/argos v0.1.1
 	github.com/testcontainers/testcontainers-go/modules/cassandra v0.44.0
 	go.opentelemetry.io/otel v1.46.0
 	go.opentelemetry.io/otel/metric v1.46.0

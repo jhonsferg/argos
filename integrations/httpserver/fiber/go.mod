@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/gofiber/fiber/v2 v2.52.15
-	github.com/jhonsferg/argos v0.1.0
+	github.com/jhonsferg/argos v0.1.1
 	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2
 	github.com/valyala/fasthttp v1.70.0
 	go.opentelemetry.io/otel v1.46.0
