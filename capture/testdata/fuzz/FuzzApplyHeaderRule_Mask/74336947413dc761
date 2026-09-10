@@ -1,0 +1,4 @@
+go test fuzz v1
+string("x\x80\x00")
+string("X\x80\x00")
+string("0")

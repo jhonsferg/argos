@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\xc30")
+string("\xe800")
+string("0")

@@ -1,0 +1,2 @@
+go test fuzz v1
+string("AAAA AAAA  A\x8e\xc9A\xee'\xec0 \x83A \x81A\xac0~\xd1\xd40\xec\xf6A\xa00 0| \xd4 AAAA 000AA   0")

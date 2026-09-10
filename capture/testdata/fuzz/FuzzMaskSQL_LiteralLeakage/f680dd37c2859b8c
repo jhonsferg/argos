@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\"\U00108a9d\U00108aae𫮝\U00108aae0𫐮0𫅐")
+string("1")
+string("0")

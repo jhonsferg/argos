@@ -1,0 +1,4 @@
+go test fuzz v1
+string("0")
+string("1")
+string("'000\"0\xf3\x9d\x88 0\xf3\x9d\x880")

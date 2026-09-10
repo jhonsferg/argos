@@ -1,0 +1,4 @@
+go test fuzz v1
+string("A0AAAAAA AAAA A AAAAA AAAAA")
+string("000000000000000000000000000")
+string("Aէ\xfa0\xf2a\xe5aA\xab\xb9\xaaA\x98aAAaߎAa\x99\xd8AA")

@@ -1,0 +1,4 @@
+go test fuzz v1
+string("0")
+string("\xca0\xb7\x92\xf9\xed\xef\xb4\xfb\xf2")
+string("")

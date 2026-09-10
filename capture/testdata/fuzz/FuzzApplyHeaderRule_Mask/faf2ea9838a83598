@@ -1,0 +1,4 @@
+go test fuzz v1
+string("X-å")
+string("X-\xe3")
+string("0")

@@ -1,0 +1,4 @@
+go test fuzz v1
+string("00")
+string("000")
+string("0010-   A0010 A0010 A0/\"A00100100")

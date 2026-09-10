@@ -1,0 +1,4 @@
+go test fuzz v1
+string("A A A 0")
+string("A0")
+string("A A A A A A A A A A A A A A A A A 0 0 0 0 A A A 0 A A'0A A1 A A\xf0\xb3A 0 A A A A A A A A A A A 0 A A 0 A A A 0 A A A A A A A A A A A A 0 A A\"A A A A 0 A A 0\xe7\x910A A A A A A A A A 0 0 A A A A\xea\x86A A\xf3\xb70A A A A A A A A A A A 0\xf3\x81A A A A A A A A A A A A")

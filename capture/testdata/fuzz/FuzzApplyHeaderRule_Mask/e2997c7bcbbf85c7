@@ -1,0 +1,4 @@
+go test fuzz v1
+string("X-\xa8\x9cniCod0")
+string("X-\xbc\x9cniCod0")
+string("0")

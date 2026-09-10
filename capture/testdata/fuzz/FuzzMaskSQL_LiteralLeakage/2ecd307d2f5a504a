@@ -1,0 +1,4 @@
+go test fuzz v1
+string("'\xec\xa4")
+string("1")
+string("0")

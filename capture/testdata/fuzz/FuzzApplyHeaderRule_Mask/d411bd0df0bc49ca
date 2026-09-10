@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\xf20")
+string("\xff")
+string("0")

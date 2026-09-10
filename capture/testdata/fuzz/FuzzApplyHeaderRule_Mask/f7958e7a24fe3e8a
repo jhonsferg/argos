@@ -1,0 +1,4 @@
+go test fuzz v1
+string("X-Ü\xb6")
+string("X-Ü\x80")
+string("0")

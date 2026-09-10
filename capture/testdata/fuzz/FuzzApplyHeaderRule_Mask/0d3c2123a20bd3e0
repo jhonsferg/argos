@@ -1,0 +1,4 @@
+go test fuzz v1
+string("aaaaAA\x81AAAAAAAAA")
+string("aaaaaa\x80Aaaaaaaaa")
+string("0")

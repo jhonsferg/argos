@@ -1,0 +1,4 @@
+go test fuzz v1
+string("X0Ü")
+string("x\xc30\x9c")
+string("0")

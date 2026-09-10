@@ -1,0 +1,4 @@
+go test fuzz v1
+string("X-ÜNA")
+string("X-ÜnB")
+string("0")

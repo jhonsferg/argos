@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\xd9Ѝ\xea\xc6")
+string("0")
+string("")

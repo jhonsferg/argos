@@ -1,0 +1,4 @@
+go test fuzz v1
+string("0")
+string("00000'000000\xe5\xb50000渐0\\000\xdf0\x9800\xeb0\x89\x820")
+string("0")

@@ -1,0 +1,4 @@
+go test fuzz v1
+string("'")
+string("A")
+string("\xf4\x8c\x9a'")

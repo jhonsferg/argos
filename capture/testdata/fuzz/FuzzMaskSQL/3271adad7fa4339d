@@ -1,0 +1,2 @@
+go test fuzz v1
+string("䶯0鎤\x95\xbb'0簅\xe20䏤0鿪0葩0빘\xec00")

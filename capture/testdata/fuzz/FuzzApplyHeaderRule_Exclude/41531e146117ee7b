@@ -1,0 +1,4 @@
+go test fuzz v1
+string("üüüü")
+string("ÜÜÜÜ")
+string("0")

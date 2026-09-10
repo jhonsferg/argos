@@ -1,0 +1,4 @@
+go test fuzz v1
+string("0\x980000000")
+string("AA0000A00000\xf800A0")
+string("0")

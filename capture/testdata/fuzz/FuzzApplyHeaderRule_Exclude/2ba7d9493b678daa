@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\xc3")
+string("\xc5")
+string("0")

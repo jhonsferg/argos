@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\U0004dd5cꌫ'\xe2\xa50\xf1\x940\xe4\xb20\xec\xb80'\xe2\xbe0ʼڷƊ'ك'ԛս'Ѷϼ'\u038dǽ\xee\x9e0\xf3\xb10\uf05d'ܵƴғֈ\"ܝ\xe0\xb80\xea\xa50\xe5\x980束ަÝсՙ\xf4\x8e0迏")
+string("é")
+string("0")

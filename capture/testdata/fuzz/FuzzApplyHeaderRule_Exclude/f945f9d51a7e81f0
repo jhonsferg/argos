@@ -1,0 +1,4 @@
+go test fuzz v1
+string("aA")
+string("aaaaaa\xcd\xe5aaAa\xef\x840aaa\xf800AaA")
+string("0")

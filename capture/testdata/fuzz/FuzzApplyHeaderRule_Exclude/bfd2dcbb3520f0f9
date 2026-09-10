@@ -1,0 +1,4 @@
+go test fuzz v1
+string("y\xc3")
+string("00\xc3")
+string("0")

@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\x990000")
+string("\xa1000000000000000000000000000000")
+string("0")

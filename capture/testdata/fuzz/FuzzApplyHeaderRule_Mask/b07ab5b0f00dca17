@@ -1,0 +1,4 @@
+go test fuzz v1
+string("x-ÜniCode")
+string("x-ünicode")
+string("0")

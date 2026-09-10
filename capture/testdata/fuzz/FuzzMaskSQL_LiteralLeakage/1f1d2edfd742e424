@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\xcdӻ\"ɿ쯤ڋޔ\"ˠȻ܊\"\u0088٢\"ˉßժ˺\"ˇ0昱ģƙܾ\U0006bb9dҐ뼿ɜē幃º''\U00108aae0\xf0\xab\x85֦ɘ݆00ɞ")
+string("A")
+string("0")

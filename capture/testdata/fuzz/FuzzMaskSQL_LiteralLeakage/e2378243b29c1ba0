@@ -1,0 +1,4 @@
+go test fuzz v1
+string("0")
+string("00")
+string("\"\U001080350\xe10\xe3\xb8\xca0¥Х01Ąﵣ01\xec\x91\xdb0\xda0ۖ\x930ر0101\"ʉ")

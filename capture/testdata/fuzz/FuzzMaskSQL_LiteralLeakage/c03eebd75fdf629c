@@ -1,0 +1,4 @@
+go test fuzz v1
+string("  ")
+string("0")
+string("A11111 111111111 A 1 A11 A1111111 A")

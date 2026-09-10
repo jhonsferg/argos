@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\xdf0ב''\xe5\xa9Ѡʾ\xe9\x88ʺŹˁ\xeb\x81\u03a2\xe5\x9a \xf1\xa5םʄ\xe3\x880")
+string("1")
+string("0")

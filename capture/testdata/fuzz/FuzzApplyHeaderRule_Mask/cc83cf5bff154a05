@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\x97pi-ke-Api-kX")
+string("\xd8PI-KE-API-K0")
+string("0")

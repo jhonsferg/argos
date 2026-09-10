@@ -1,0 +1,4 @@
+go test fuzz v1
+string("Author\xcfZ0")
+string("Author\x8cZ0")
+string("0")

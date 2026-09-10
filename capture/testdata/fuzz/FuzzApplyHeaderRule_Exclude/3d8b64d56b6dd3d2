@@ -1,0 +1,4 @@
+go test fuzz v1
+string("ϑ")
+string("\xff")
+string("0")

@@ -1,0 +1,4 @@
+go test fuzz v1
+string("Մխ\u009fϷڛнӒʂ݂ۚģ̹̇Іە\xf3\xf3\xf3\xf3\xf3\xf3\xf3\xf3")
+string("\xb7\xf7\x82\xd2")
+string("0")

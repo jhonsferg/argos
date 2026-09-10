@@ -1,0 +1,4 @@
+go test fuzz v1
+string("A0000000 A000 10A0000 A000000")
+string("01")
+string(" Ȏ     0000\"0")

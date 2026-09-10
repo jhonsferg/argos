@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\xf2")
+string("000A0000")
+string("00A0000000000 100 0")

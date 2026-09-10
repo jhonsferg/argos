@@ -1,0 +1,4 @@
+go test fuzz v1
+string("X-ÜniCo\xe2\xe2\xe2\xe2de")
+string("X-ÜniCo\x8d\x8d\x8d\x8dde")
+string("0")

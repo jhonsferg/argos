@@ -1,0 +1,4 @@
+go test fuzz v1
+string("AAAAAAAA\xdb\xdb\xdbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+string("aaaaaaaa\xb6\xf7\xd2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+string("0")

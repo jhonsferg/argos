@@ -1,0 +1,4 @@
+go test fuzz v1
+string("0")
+string("Î\xa70\x96\xa0")
+string("")

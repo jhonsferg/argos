@@ -1,0 +1,4 @@
+go test fuzz v1
+string("0x")
+string("A")
+string("0")

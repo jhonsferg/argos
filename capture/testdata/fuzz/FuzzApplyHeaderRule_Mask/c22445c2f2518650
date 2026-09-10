@@ -1,0 +1,4 @@
+go test fuzz v1
+string("x-B")
+string("X-A")
+string("0")

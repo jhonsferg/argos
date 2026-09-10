@@ -1,0 +1,4 @@
+go test fuzz v1
+string("\x81\x81\x81\x81\x81\x81\x81\x81")
+string("0")
+string("1")

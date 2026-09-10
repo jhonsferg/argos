@@ -1,0 +1,4 @@
+go test fuzz v1
+string("00000A\x98\x98\x98\x98\x98\x980000000")
+string("1")
+string("")
