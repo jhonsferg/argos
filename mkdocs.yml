@@ -1,0 +1,100 @@
+site_name: Argos
+site_description: Zero-allocation-focused declarative OpenTelemetry instrumentation for Go
+site_url: https://jhonsferg.github.io/argos
+repo_name: jhonsferg/argos
+repo_url: https://github.com/jhonsferg/argos
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Quick Start: quickstart.md
+      - Configuration: guides/configuration.md
+  - Guides:
+      - Tracing Custom Operations: guides/tracing.md
+      - HTTP Servers: guides/http-servers.md
+      - HTTP Client: guides/http-client.md
+      - SQL: guides/sql.md
+      - GORM: guides/gorm.md
+      - Redis: guides/redis.md
+      - MongoDB: guides/mongo.md
+      - Cassandra: guides/cassandra.md
+      - Kafka: guides/kafka.md
+      - RabbitMQ: guides/rabbitmq.md
+      - Azure Service Bus: guides/azure-service-bus.md
+      - GCP Pub/Sub: guides/gcp-pubsub.md
+      - gRPC: guides/grpc.md
+      - SFTP: guides/sftp.md
+      - SMTP: guides/smtp.md
+      - Logging: guides/logging.md
+      - Testing: guides/testing.md
+      - Doctor CLI: guides/doctor-cli.md
+  - Samples: samples.md
+  - Architecture: architecture.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jhonsferg/argos
+
+copyright: Copyright &copy; jhonsferg - MIT License
