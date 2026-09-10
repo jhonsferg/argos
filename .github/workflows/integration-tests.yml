@@ -1,0 +1,241 @@
+name: Integration Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  otel-collector-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version: "1.26"
+
+      - name: generate collector config
+        run: |
+          cat > /tmp/otel-collector-config.yaml <<'EOF'
+          receivers:
+            otlp:
+              protocols:
+                grpc:
+                  endpoint: 0.0.0.0:4317
+                http:
+                  endpoint: 0.0.0.0:4318
+          processors:
+            batch: {}
+          exporters:
+            debug:
+              verbosity: detailed
+          service:
+            pipelines:
+              traces:
+                receivers: [otlp]
+                processors: [batch]
+                exporters: [debug]
+              metrics:
+                receivers: [otlp]
+                processors: [batch]
+                exporters: [debug]
+              logs:
+                receivers: [otlp]
+                processors: [batch]
+                exporters: [debug]
+          EOF
+
+      - name: start otel-collector
+        run: |
+          docker run -d --name otel-collector \
+            -v /tmp/otel-collector-config.yaml:/etc/otel-collector-config.yaml:ro \
+            -p 4317:4317 -p 4318:4318 \
+            otel/opentelemetry-collector-contrib:latest \
+            --config=/etc/otel-collector-config.yaml
+
+      - name: wait for collector
+        run: |
+          for i in $(seq 1 30); do
+            (echo > /dev/tcp/127.0.0.1/4317) 2>/dev/null && exit 0
+            sleep 1
+          done
+          echo "collector did not become ready" >&2
+          exit 1
+
+      - name: run core-dummy against the real collector
+        run: |
+          cd examples/core-dummy
+          OTEL_EXPORTER_OTLP_ENDPOINT=localhost:4317 go run .
+
+      - name: collector received the span/log
+        run: |
+          for i in $(seq 1 15); do
+            if docker logs otel-collector 2>&1 | grep -q "ResourceSpans" \
+              && docker logs otel-collector 2>&1 | grep -q "ResourceLog"; then
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "collector never logged the received span/log" >&2
+          docker logs otel-collector
+          exit 1
+
+      - name: tear down
+        if: always()
+        run: docker rm -f otel-collector
+
+  data-layer-testcontainers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version: "1.26"
+
+      - name: argos-sql against real PostgreSQL
+        working-directory: integrations/sql
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      - name: argos-gorm against real PostgreSQL (via argos-sql)
+        working-directory: integrations/gorm
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      - name: argos-redis against real Redis
+        working-directory: integrations/redis
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      - name: argos-mongo against real MongoDB
+        working-directory: integrations/mongo
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      - name: argos-cassandra against real Cassandra
+        working-directory: integrations/cassandra
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      - name: argos-sftp against a real SFTP server
+        working-directory: integrations/sftp
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      - name: argos-smtp against a real SMTP server
+        working-directory: integrations/smtp
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      # This coverage is the authoritative number for these 7 modules (a
+      # single -tags=integration run also includes every non-tagged test),
+      # not just an addition to build-test's unit-only number in ci.yml.
+      - name: upload coverage artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-integration-data-layer
+          path: |
+            integrations/sql/coverage.out
+            integrations/gorm/coverage.out
+            integrations/redis/coverage.out
+            integrations/mongo/coverage.out
+            integrations/cassandra/coverage.out
+            integrations/sftp/coverage.out
+            integrations/smtp/coverage.out
+          if-no-files-found: ignore
+          retention-days: 14
+
+  messaging-testcontainers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version: "1.26"
+
+      - name: argos-kafka against a real broker
+        working-directory: integrations/kafka
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      - name: argos-rabbitmq against a real broker
+        working-directory: integrations/rabbitmq
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      - name: argos-gcppubsub against the real emulator
+        working-directory: integrations/gcppubsub
+        run: go test -tags=integration ./... -covermode=atomic -coverprofile=coverage.out -coverpkg=./...
+
+      # See the equivalent step in data-layer-testcontainers - authoritative
+      # coverage for these 3 modules, not just an addition to ci.yml's.
+      - name: upload coverage artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-integration-messaging
+          path: |
+            integrations/kafka/coverage.out
+            integrations/rabbitmq/coverage.out
+            integrations/gcppubsub/coverage.out
+          if-no-files-found: ignore
+          retention-days: 14
+
+  # No job for argos-azuresb: Azure Service Bus has no testcontainers module
+  # or comparably simple local emulator (it needs a companion SQL Server/
+  # Azurite container and manual queue/topic config) - its context
+  # propagation coverage lives entirely in its unit tests instead.
+
+  samples-smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sample:
+          [
+            orders-api,
+            catalog-service,
+            notifications-worker,
+            shipments-service,
+            reports-service,
+          ]
+        include:
+          - sample: orders-api
+            port: 8080
+          - sample: catalog-service
+            port: 8081
+          - sample: notifications-worker
+            port: 8082
+          - sample: shipments-service
+            port: 8083
+          - sample: reports-service
+            port: 8084
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version: "1.26"
+
+      - name: build sample
+        working-directory: samples/${{ matrix.sample }}
+        run: go build -o /tmp/sample-app .
+
+      - name: docker compose up
+        working-directory: samples/${{ matrix.sample }}
+        run: docker compose up -d --wait
+
+      - name: run sample and smoke-test /healthz
+        working-directory: samples/${{ matrix.sample }}
+        run: |
+          /tmp/sample-app &
+          PID=$!
+          ok=false
+          for i in $(seq 1 30); do
+            if curl -sf "http://localhost:${{ matrix.port }}/healthz" > /dev/null; then
+              ok=true
+              break
+            fi
+            sleep 1
+          done
+          kill "$PID" 2>/dev/null || true
+          if [ "$ok" != "true" ]; then
+            echo "sample did not become healthy" >&2
+            exit 1
+          fi
+
+      - name: tear down
+        if: always()
+        working-directory: samples/${{ matrix.sample }}
+        run: docker compose down -v

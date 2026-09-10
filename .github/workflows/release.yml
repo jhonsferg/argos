@@ -1,0 +1,93 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v[0-9]*.[0-9]*.[0-9]*" # the root module (github.com/jhonsferg/argos),
+      # tagged bare with no path prefix, per Go's own convention for a
+      # multi-module repo's root module.
+      - "core/v*" # obsolete - core/ moved to the repo root, kept only so an
+      # old tag pushed again (e.g. by mistake) doesn't silently no-op.
+      - "cmd/doctor/v*"
+      - "integrations/**/v*" # ** so nested paths match too, e.g.
+      # integrations/httpserver/chi/v0.1.0 - a bare "*" does not cross "/".
+      # samples/** and examples/** are intentionally excluded here: only the
+      # library (root module) and its extensions (integrations/*) get
+      # releases.
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: derive module + version from tag
+        id: tag
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          case "$tag" in
+            v[0-9]*)
+              # The root module's tag has no path prefix - "." is its
+              # go.work entry and how git pathspecs scope to it below.
+              module="."
+              display="argos"
+              version="$tag"
+              ;;
+            *)
+              module="${tag%/*}"
+              display="$module"
+              version="${tag##*/}"
+              ;;
+          esac
+          echo "module=$module" >> "$GITHUB_OUTPUT"
+          echo "display=$display" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: verify module exists in go.work
+        run: |
+          if [ "${{ steps.tag.outputs.module }}" = "." ]; then
+            grep -qE '^\s*\.\s*$' go.work \
+              || (echo "::error::root module '.' is not a go.work member" && exit 1)
+          else
+            grep -q "\"./${{ steps.tag.outputs.module }}\"\|\./${{ steps.tag.outputs.module }}$" go.work \
+              || (echo "::error::tag prefix '${{ steps.tag.outputs.module }}' is not a go.work module" && exit 1)
+          fi
+
+      - name: refuse to release samples or examples
+        run: |
+          case "${{ steps.tag.outputs.module }}" in
+            samples/*|examples/*)
+              echo "::error::samples/ and examples/ are never released - got '${{ steps.tag.outputs.module }}'"
+              exit 1
+              ;;
+          esac
+
+      - name: changelog since previous tag for this module
+        id: changelog
+        run: |
+          if [ "${{ steps.tag.outputs.module }}" = "." ]; then
+            prev=$(git tag --list "v[0-9]*.[0-9]*.[0-9]*" --sort=-v:refname | sed -n 2p)
+            pathspec=(-- ':(top)*.go' argostest capture internal log logging middleware propagation resource go.mod go.sum)
+          else
+            prev=$(git tag --list "${{ steps.tag.outputs.module }}/v*" --sort=-v:refname | sed -n 2p)
+            pathspec=(-- "${{ steps.tag.outputs.module }}")
+          fi
+          range="${prev:+$prev..}${GITHUB_REF#refs/tags/}"
+          {
+            echo "log<<EOF"
+            git log "$range" --oneline "${pathspec[@]}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "${{ steps.tag.outputs.display }} ${{ steps.tag.outputs.version }}"
+          body: |
+            Changes in `${{ steps.tag.outputs.display }}` since the previous tag:
+
+            ${{ steps.changelog.outputs.log }}

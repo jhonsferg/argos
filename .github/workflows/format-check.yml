@@ -1,0 +1,27 @@
+name: Format Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  prettier:
+    name: Prettier (Markdown/YAML)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: prettier --check
+        run: |
+          docker run --rm -v "$PWD":/work -w /work node:22-alpine \
+            npx --yes prettier@3 --check '**/*.md' '**/*.{yml,yaml}'
+
+  buf-format:
+    name: buf format (Protobuf)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: buf format --exit-code
+        run: |
+          docker run --rm -v "$PWD":/work -w /work bufbuild/buf:latest \
+            format -d --exit-code
