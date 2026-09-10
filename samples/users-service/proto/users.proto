@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package users.v1;
+
+option go_package = "github.com/jhonsferg/argos/samples/users-service/userspb";
+
+service Users {
+  rpc GetUser(GetUserRequest) returns (User);
+  rpc CreateUser(CreateUserRequest) returns (User);
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message GetUserRequest {
+  string id = 1;
+}
+
+message CreateUserRequest {
+  string name = 1;
+  string email = 2;
+}
