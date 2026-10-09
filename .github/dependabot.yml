@@ -1,14 +1,19 @@
 version: 2
 updates:
+  # Every module in the repository (the root and each nested go.mod), grouped
+  # into a single weekly PR
   - package-ecosystem: gomod
-    directory: /core
+    directories:
+      - "/**/*"
     schedule:
       interval: weekly
-  - package-ecosystem: gomod
-    directory: /examples/core-dummy
-    schedule:
-      interval: weekly
+    groups:
+      go-dependencies:
+        patterns: ["*"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    groups:
+      github-actions:
+        patterns: ["*"]
