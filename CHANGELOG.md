@@ -6,6 +6,12 @@ for why this isn't split per module. Each module is versioned and tagged
 independently (`<module-path>/vX.Y.Z`); an entry below names the specific
 module(s) it applies to.
 
+## [Unreleased]
+
+### Security
+
+- All modules: bump `golang.org/x/net` from v0.58.0 to v0.60.0 (GO-2026-6617), found by `govulncheck`.
+
 ## [Initial release] - 2026-09-10
 
 First tagged release of every module in this repository. Module versions
