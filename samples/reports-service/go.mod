@@ -5,12 +5,12 @@ go 1.26.0
 require (
 	github.com/gocql/gocql v1.7.0
 	github.com/gofiber/fiber/v2 v2.52.15
-	github.com/jhonsferg/argos v0.1.1
-	github.com/jhonsferg/argos/integrations/cassandra v0.1.2
-	github.com/jhonsferg/argos/integrations/httpserver/fiber v0.1.2
-	github.com/jhonsferg/argos/integrations/sftp v0.1.2
+	github.com/jhonsferg/argos v0.1.2
+	github.com/jhonsferg/argos/integrations/cassandra v0.1.3
+	github.com/jhonsferg/argos/integrations/httpserver/fiber v0.1.3
+	github.com/jhonsferg/argos/integrations/sftp v0.1.3
 	github.com/pkg/sftp v1.13.11
-	golang.org/x/crypto v0.57.0
+	golang.org/x/crypto v0.58.0
 )
 
 require (
@@ -22,7 +22,7 @@ require (
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.30.0 // indirect
 	github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed // indirect
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2 // indirect
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.3 // indirect
 	github.com/klauspost/compress v1.20.1 // indirect
 	github.com/kr/fs v0.1.0 // indirect
 	github.com/mattn/go-colorable v0.1.15 // indirect
@@ -49,10 +49,10 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v1.47.0 // indirect
 	go.opentelemetry.io/otel/trace v1.47.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.11.0 // indirect
-	golang.org/x/net v0.60.0 // indirect
-	golang.org/x/sys v0.48.0 // indirect
-	golang.org/x/text v0.42.0 // indirect
-	golang.org/x/tools v0.51.0 // indirect
+	golang.org/x/net v0.61.0 // indirect
+	golang.org/x/sys v0.49.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
+	golang.org/x/tools v0.52.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260928230214-8a89bd6388cc // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260928230214-8a89bd6388cc // indirect
 	google.golang.org/grpc v1.84.0 // indirect

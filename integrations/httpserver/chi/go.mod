@@ -3,8 +3,8 @@ module github.com/jhonsferg/argos/integrations/httpserver/chi
 go 1.26.0
 
 require (
-	github.com/go-chi/chi/v5 v5.3.2
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2
+	github.com/go-chi/chi/v5 v5.4.0
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.3
 	go.opentelemetry.io/otel v1.47.0
 	go.opentelemetry.io/otel/sdk v1.47.0
 )
@@ -16,7 +16,7 @@ require (
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.30.0 // indirect
-	github.com/jhonsferg/argos v0.1.1 // indirect
+	github.com/jhonsferg/argos v0.1.2 // indirect
 	github.com/mattn/go-colorable v0.1.15 // indirect
 	github.com/mattn/go-isatty v0.0.22 // indirect
 	github.com/rs/zerolog v1.35.1 // indirect
@@ -34,9 +34,9 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v1.47.0 // indirect
 	go.opentelemetry.io/otel/trace v1.47.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.11.0 // indirect
-	golang.org/x/net v0.60.0 // indirect
-	golang.org/x/sys v0.48.0 // indirect
-	golang.org/x/text v0.42.0 // indirect
+	golang.org/x/net v0.61.0 // indirect
+	golang.org/x/sys v0.49.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260928230214-8a89bd6388cc // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260928230214-8a89bd6388cc // indirect
 	google.golang.org/grpc v1.84.0 // indirect

@@ -3,8 +3,8 @@ module github.com/jhonsferg/argos/integrations/rabbitmq
 go 1.26.0
 
 require (
-	github.com/jhonsferg/argos v0.1.1
-	github.com/jhonsferg/argos/integrations/messaging/core v0.1.2
+	github.com/jhonsferg/argos v0.1.2
+	github.com/jhonsferg/argos/integrations/messaging/core v0.1.3
 	github.com/rabbitmq/amqp091-go v1.15.0
 	github.com/testcontainers/testcontainers-go/modules/rabbitmq v0.44.0
 	go.opentelemetry.io/otel v1.47.0
@@ -61,9 +61,8 @@ require (
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.70.0 // indirect
 	go.opentelemetry.io/otel/log v1.47.0 // indirect
 	go.opentelemetry.io/otel/metric v1.47.0 // indirect
-	go.opentelemetry.io/otel/sdk/log v1.47.0 // indirect
 	go.opentelemetry.io/otel/trace v1.47.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
-	golang.org/x/crypto v0.57.0 // indirect
-	golang.org/x/sys v0.48.0 // indirect
+	golang.org/x/crypto v0.58.0 // indirect
+	golang.org/x/sys v0.49.0 // indirect
 )

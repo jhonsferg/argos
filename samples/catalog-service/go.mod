@@ -6,11 +6,11 @@ require (
 	github.com/IBM/sarama v1.61.1
 	github.com/gin-gonic/gin v1.12.0
 	github.com/jackc/pgx/v5 v5.11.0
-	github.com/jhonsferg/argos v0.1.1
-	github.com/jhonsferg/argos/integrations/gorm v0.1.2
-	github.com/jhonsferg/argos/integrations/httpserver/gin v0.1.2
-	github.com/jhonsferg/argos/integrations/kafka v0.1.2
-	github.com/jhonsferg/argos/integrations/sql v0.1.2
+	github.com/jhonsferg/argos v0.1.2
+	github.com/jhonsferg/argos/integrations/gorm v0.1.3
+	github.com/jhonsferg/argos/integrations/httpserver/gin v0.1.3
+	github.com/jhonsferg/argos/integrations/kafka v0.1.3
+	github.com/jhonsferg/argos/integrations/sql v0.1.3
 	go.opentelemetry.io/otel v1.47.0
 	gorm.io/driver/postgres v1.6.3
 	gorm.io/gorm v1.31.2
@@ -45,8 +45,8 @@ require (
 	github.com/jcmturner/gofork v1.7.6 // indirect
 	github.com/jcmturner/gokrb5/v8 v8.4.4 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2 // indirect
-	github.com/jhonsferg/argos/integrations/messaging/core v0.1.2 // indirect
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.3 // indirect
+	github.com/jhonsferg/argos/integrations/messaging/core v0.1.3 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
@@ -82,11 +82,12 @@ require (
 	go.opentelemetry.io/otel/trace v1.47.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.11.0 // indirect
 	golang.org/x/arch v0.22.0 // indirect
-	golang.org/x/crypto v0.57.0 // indirect
-	golang.org/x/net v0.60.0 // indirect
-	golang.org/x/sync v0.23.0 // indirect
-	golang.org/x/sys v0.48.0 // indirect
-	golang.org/x/text v0.42.0 // indirect
+	golang.org/x/crypto v0.58.0 // indirect
+	golang.org/x/mod v0.42.0 // indirect
+	golang.org/x/net v0.61.0 // indirect
+	golang.org/x/sync v0.24.0 // indirect
+	golang.org/x/sys v0.49.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260928230214-8a89bd6388cc // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260928230214-8a89bd6388cc // indirect
 	google.golang.org/grpc v1.84.0 // indirect
