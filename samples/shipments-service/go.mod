@@ -4,19 +4,19 @@ go 1.26.0
 
 require (
 	cloud.google.com/go/pubsub/v2 v2.7.0
-	github.com/jhonsferg/argos v0.1.1
-	github.com/jhonsferg/argos/integrations/gcppubsub v0.1.3
-	github.com/jhonsferg/argos/integrations/httpserver/echo v0.1.2
-	github.com/jhonsferg/argos/integrations/mongo v0.1.2
+	github.com/jhonsferg/argos v0.1.2
+	github.com/jhonsferg/argos/integrations/gcppubsub v0.1.4
+	github.com/jhonsferg/argos/integrations/httpserver/echo v0.1.3
+	github.com/jhonsferg/argos/integrations/mongo v0.1.3
 	github.com/labstack/echo/v4 v4.16.0
 	go.mongodb.org/mongo-driver/v2 v2.9.2
-	google.golang.org/api v0.300.0
+	google.golang.org/api v0.302.0
 	google.golang.org/grpc v1.84.0
 )
 
 require (
 	cloud.google.com/go v0.123.0 // indirect
-	cloud.google.com/go/auth v0.24.0 // indirect
+	cloud.google.com/go/auth v0.24.1-0.20261001053825-dbc26066f70a // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.3.0 // indirect
 	cloud.google.com/go/compute/metadata v0.10.0 // indirect
 	cloud.google.com/go/iam v1.12.0 // indirect
@@ -25,13 +25,14 @@ require (
 	github.com/felixge/httpsnoop v1.1.0 // indirect
 	github.com/go-logr/logr v1.4.4 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
-	github.com/google/s2a-go v0.1.10 // indirect
+	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8 // indirect
+	github.com/google/s2a-go v0.1.11 // indirect
 	github.com/google/uuid v1.6.0 // indirect
-	github.com/googleapis/enterprise-certificate-proxy v0.3.22 // indirect
+	github.com/googleapis/enterprise-certificate-proxy v0.3.23 // indirect
 	github.com/googleapis/gax-go/v2 v2.26.2 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.30.0 // indirect
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2 // indirect
-	github.com/jhonsferg/argos/integrations/messaging/core v0.1.2 // indirect
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.3 // indirect
+	github.com/jhonsferg/argos/integrations/messaging/core v0.1.3 // indirect
 	github.com/klauspost/compress v1.20.1 // indirect
 	github.com/labstack/gommon v0.5.0 // indirect
 	github.com/mattn/go-colorable v0.1.15 // indirect
@@ -62,16 +63,16 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v1.47.0 // indirect
 	go.opentelemetry.io/otel/trace v1.47.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.11.0 // indirect
-	golang.org/x/crypto v0.57.0 // indirect
-	golang.org/x/net v0.60.0 // indirect
+	golang.org/x/crypto v0.58.0 // indirect
+	golang.org/x/net v0.61.0 // indirect
 	golang.org/x/oauth2 v0.37.0 // indirect
-	golang.org/x/sync v0.23.0 // indirect
-	golang.org/x/sys v0.48.0 // indirect
-	golang.org/x/text v0.42.0 // indirect
+	golang.org/x/sync v0.24.0 // indirect
+	golang.org/x/sys v0.49.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
 	golang.org/x/time v0.16.0 // indirect
 	google.golang.org/genproto v0.0.0-20260715232425-e75dac1f907d // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260928230214-8a89bd6388cc // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20260928230214-8a89bd6388cc // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20261005182115-fad411399dd8 // indirect
 	google.golang.org/protobuf v1.36.12 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

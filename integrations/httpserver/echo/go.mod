@@ -3,8 +3,8 @@ module github.com/jhonsferg/argos/integrations/httpserver/echo
 go 1.26.0
 
 require (
-	github.com/jhonsferg/argos v0.1.1
-	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.2
+	github.com/jhonsferg/argos v0.1.2
+	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.3
 	github.com/labstack/echo/v4 v4.16.0
 	go.opentelemetry.io/otel v1.47.0
 	go.opentelemetry.io/otel/sdk v1.47.0
@@ -37,10 +37,10 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v1.47.0 // indirect
 	go.opentelemetry.io/otel/trace v1.47.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.11.0 // indirect
-	golang.org/x/crypto v0.57.0 // indirect
-	golang.org/x/net v0.60.0 // indirect
-	golang.org/x/sys v0.48.0 // indirect
-	golang.org/x/text v0.42.0 // indirect
+	golang.org/x/crypto v0.58.0 // indirect
+	golang.org/x/net v0.61.0 // indirect
+	golang.org/x/sys v0.49.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260928230214-8a89bd6388cc // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260928230214-8a89bd6388cc // indirect
 	google.golang.org/grpc v1.84.0 // indirect
