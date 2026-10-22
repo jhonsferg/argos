@@ -10,7 +10,7 @@ require (
 	github.com/jhonsferg/argos/integrations/mongo v0.1.3
 	github.com/labstack/echo/v4 v4.16.0
 	go.mongodb.org/mongo-driver/v2 v2.9.2
-	google.golang.org/api v0.302.0
+	google.golang.org/api v0.305.0
 	google.golang.org/grpc v1.84.0
 )
 
@@ -33,7 +33,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.30.0 // indirect
 	github.com/jhonsferg/argos/integrations/httpserver/core v0.1.3 // indirect
 	github.com/jhonsferg/argos/integrations/messaging/core v0.1.3 // indirect
-	github.com/klauspost/compress v1.20.1 // indirect
+	github.com/klauspost/compress v1.20.3 // indirect
 	github.com/labstack/gommon v0.5.0 // indirect
 	github.com/mattn/go-colorable v0.1.15 // indirect
 	github.com/mattn/go-isatty v0.0.22 // indirect
